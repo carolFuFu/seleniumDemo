@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[搜索关键词-selenium]]>
+    </line>
+    <line>
+      <![CDATA[搜索关键词-testng]]>
+    </line>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="17111" started-at="2019-02-17T08:18:20Z" finished-at="2019-02-17T08:18:37Z">
+    <groups>
+    </groups>
+    <test name="seleniumDemo" duration-ms="17111" started-at="2019-02-17T08:18:20Z" finished-at="2019-02-17T08:18:37Z">
+      <class name="SearchKeywordParameter">
+        <test-method status="PASS" signature="setup()[pri:0, instance:SearchKeywordParameter@7dc36524]" name="setup" is-config="true" duration-ms="5733" started-at="2019-02-17T08:18:20Z" finished-at="2019-02-17T08:18:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test(java.lang.String)[pri:0, instance:SearchKeywordParameter@7dc36524]" name="test" duration-ms="2864" started-at="2019-02-17T08:18:26Z" data-provider="getData" finished-at="2019-02-17T08:18:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[selenium]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[搜索关键词-selenium]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:SearchKeywordParameter@7dc36524]" name="teardown" is-config="true" duration-ms="962" started-at="2019-02-17T08:18:29Z" finished-at="2019-02-17T08:18:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:SearchKeywordParameter@7dc36524]" name="setup" is-config="true" duration-ms="3756" started-at="2019-02-17T08:18:30Z" finished-at="2019-02-17T08:18:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test(java.lang.String)[pri:0, instance:SearchKeywordParameter@7dc36524]" name="test" duration-ms="2820" started-at="2019-02-17T08:18:34Z" data-provider="getData" finished-at="2019-02-17T08:18:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testng]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[搜索关键词-testng]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:SearchKeywordParameter@7dc36524]" name="teardown" is-config="true" duration-ms="902" started-at="2019-02-17T08:18:36Z" finished-at="2019-02-17T08:18:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- SearchKeywordParameter -->
+    </test> <!-- seleniumDemo -->
+  </suite> <!-- Default Suite -->
+</testng-results>
