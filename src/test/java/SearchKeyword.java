@@ -24,7 +24,7 @@ public class SearchKeyword {
     }
 
     @Test
-    private void test() throws Exception{
+    private void searchTest() throws Exception{
         driver.get("https://testerhome.com/");
         HomePage homePage = new HomePage(driver);
 
@@ -40,8 +40,9 @@ public class SearchKeyword {
             }
         }
 
-        if(!assertMsg.isEmpty())
-        Assert.assertTrue(false,assertMsg.toString());
+        if(!assertMsg.isEmpty()) {
+            Assert.assertTrue(false, assertMsg.toString());
+        }
     }
 
 //    public void assertTopics(String value,SearchResultPage searchResultPage){

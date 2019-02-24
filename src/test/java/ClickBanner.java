@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.EventPage;
 import page.HomePage;
+import utils.FileUtils;
 import utils.SeleniumUtils;
 
 import java.util.Date;
@@ -22,14 +23,14 @@ public class ClickBanner {
     }
 
     @Test
-    private void test() throws Exception{
+    private void clickBannerTest() throws Exception{
         driver.get("https://testerhome.com/");
 //        HomePage homePage = new HomePage(driver);
 //        EventPage eventPage = homePage.clickBannerAndReturnPage();
 //
 //        String expectTitle = "大会";
 //        eventPage.waitTitleContains(5,expectTitle);
-        String expectTitle = "大会";
+        String expectTitle = FileUtils.readYmlFile(FileUtils.getPath("/clickBanner.yml"),"expectTitle");
         new HomePage(driver).clickBannerAndReturnPage().waitTitleContains(5,expectTitle);
     }
 

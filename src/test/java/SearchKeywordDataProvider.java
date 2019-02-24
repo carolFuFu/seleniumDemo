@@ -1,6 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -14,11 +15,13 @@ import java.util.Iterator;
 
 public class SearchKeywordDataProvider {
     WebDriver driver = null;
+    String url = "";
     @BeforeMethod
-    private void setup(){
+    private void setup() throws Exception{
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        url = FileUtils.readYmlFile(FileUtils.getPath("/config.yml"), "url");
     }
 
     @DataProvider
@@ -30,7 +33,7 @@ public class SearchKeywordDataProvider {
 
     @Test(dataProvider = "getData")
     private void test(String value) throws Exception{
-        driver.get("https://testerhome.com/");
+        driver.get(url);
         HomePage homePage = new HomePage(driver);
 
         SearchResultPage searchResultPage = homePage.gotoSearchResult(value);
