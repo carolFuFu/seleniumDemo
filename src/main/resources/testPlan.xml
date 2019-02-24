@@ -4,6 +4,7 @@
         <classes>
              <class name="ClickBanner" />
              <class name="SearchKeywordDataProvider" />
+             <class name="CheckNotLogIn" />
         </classes>
     </test>
 </suite>

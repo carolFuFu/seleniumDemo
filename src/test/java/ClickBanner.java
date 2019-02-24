@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.EventPage;
 import page.HomePage;
+import utils.DateUtils;
 import utils.FileUtils;
 import utils.SeleniumUtils;
 
@@ -19,6 +21,7 @@ public class ClickBanner {
 
     @BeforeMethod
     private void setup(){
+        System.err.println("ClickBanner启动浏览器--------" + DateUtils.getTime());
         driver = new ChromeDriver();
     }
 
