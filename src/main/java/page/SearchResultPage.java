@@ -10,24 +10,18 @@ import java.util.List;
 
 public class SearchResultPage extends NavBarPage {
     @FindBy(css=".topic a")
-   public List<WebElement> topics;
+    private List<WebElement> topics;
 
     public SearchResultPage(WebDriver driver){
         super(driver);
     }
 
-    public List<WebElement> returnTopics(){
-        return topics;
-    }
-
-    public List<String> getTitles(String keyword){
-        ArrayList<String> arrayList=new ArrayList<String>();
-        for(WebElement topic : returnTopics()){
-            String actualMsg = topic.getText().trim();
-            arrayList.add(actualMsg);
-
+    public List<String> returnTopicsTitle(){
+        List<String> list = new ArrayList<String>();
+        for(WebElement topic : topics){
+            list.add(topic.getText().trim().toLowerCase());
         }
-        return arrayList;
+        return list;
     }
 
 

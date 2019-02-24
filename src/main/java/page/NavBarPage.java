@@ -11,7 +11,7 @@ import org.testng.Reporter;
 
 public class NavBarPage {
     WebDriver driver;
-    @FindBy(tagName = "input1")
+    @FindBy(tagName = "input")
     WebElement searchWebElement;
 
     public NavBarPage(WebDriver driver){
@@ -20,7 +20,6 @@ public class NavBarPage {
     }
 
     public void searchKeyWord(String value){
-        searchWebElement = driver.findElements(By.tagName("input1")).get(0);
         searchWebElement.clear();
         searchWebElement.sendKeys(value);
         Reporter.log("搜索关键词-" + value,true);

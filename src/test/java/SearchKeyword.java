@@ -11,6 +11,9 @@ import org.testng.annotations.Test;
 import page.HomePage;
 import page.SearchResultPage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchKeyword {
     WebDriver driver = null;
     @BeforeMethod
@@ -26,13 +29,19 @@ public class SearchKeyword {
         HomePage homePage = new HomePage(driver);
 
         String keyword = "selenium";
+        String expectTopic = "seleniumMMM";
         SearchResultPage searchResultPage = homePage.gotoSearchResult(keyword);
-//        assertTopics(keyword,searchResultPage);
-        String actualMsg = "";
-        for(WebElement topic : searchResultPage.returnTopics()) {
-            actualMsg = topic.getText().trim();
-            Assert.assertTrue(actualMsg.toLowerCase().contains(keyword), "期待的标题不包含" + keyword + "实际的标题是" + actualMsg);
+        List<String> assertMsg = new ArrayList<String>();
+        int i = 0;
+        for(String topic : searchResultPage.returnTopicsTitle()) {
+            System.err.println("正在校验第" + i++ + "条数据");
+            if(!topic.contains(expectTopic)){
+                assertMsg.add("期待的标题不包含" + expectTopic + "实际的标题是" + topic +"\r\n");
+            }
         }
+
+        if(!assertMsg.isEmpty())
+        Assert.assertTrue(false,assertMsg.toString());
     }
 
 //    public void assertTopics(String value,SearchResultPage searchResultPage){
