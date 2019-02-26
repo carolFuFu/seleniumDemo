@@ -1,6 +1,5 @@
 package page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +16,7 @@ public class NavBarPage {
     WebDriverWait wait;
     long time = 30;
 
+    //
     @FindBy(tagName = "input")
     WebElement searchWebElement;
 
@@ -30,6 +30,7 @@ public class NavBarPage {
     }
 
     public void searchKeyWord(String value){
+//        searchWebElement = driver.findElement(By.tagName("input"));
         searchWebElement.clear();
         searchWebElement.sendKeys(value);
         Reporter.log("搜索关键词-" + value,true);

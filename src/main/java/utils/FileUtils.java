@@ -5,7 +5,6 @@ import org.apache.commons.csv.CSVRecord;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
 import java.net.URLDecoder;
@@ -37,6 +36,13 @@ public class FileUtils {
         Map map = yaml.loadAs(fileInputStream, Map.class);
         fileInputStream.close();
         return (String)map.get(attribute);
+    }
+
+    public static Map readYmlFile(String path) throws Exception{
+        Yaml yaml = new Yaml();
+        FileInputStream fileInputStream = new FileInputStream(path);
+        Map map = yaml.loadAs(fileInputStream, Map.class);
+        return map;
     }
 
     public static void main(String[] args)throws Exception{
